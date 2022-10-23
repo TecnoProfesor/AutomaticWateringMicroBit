@@ -1,6 +1,8 @@
 let Humedad = 0
 let NivelAgua = 0
 let Segundos = 1
+let LevelWater = 1
+let NivelHumedad = 0.5
 pins.digitalWritePin(DigitalPin.P8, 0)
 while (true) {
     NivelAgua = pins.map(
@@ -11,7 +13,7 @@ while (true) {
     1
     )
     if (input.buttonIsPressed(Button.A)) {
-        if (NivelAgua >= 0.5) {
+        if (NivelAgua >= LevelWater) {
             pins.digitalWritePin(DigitalPin.P8, 1)
             basic.showLeds(`
                 # . . . #
@@ -40,10 +42,10 @@ while (true) {
     0,
     1
     )
-    if (Humedad >= 0.5) {
+    if (Humedad >= NivelHumedad) {
         basic.showIcon(IconNames.Happy)
     } else {
-        if (NivelAgua >= 0.5) {
+        if (NivelAgua >= LevelWater) {
             basic.showLeds(`
                 # . . . #
                 . # . . .
