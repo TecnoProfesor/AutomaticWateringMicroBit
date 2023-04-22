@@ -6,7 +6,7 @@ let NivelHumedad = 0.5
 pins.digitalWritePin(DigitalPin.P8, 0)
 while (true) {
     NivelAgua = pins.map(
-    pins.analogReadPin(AnalogPin.P2),
+    pins.analogReadPin(AnalogPin.P1),
     0,
     500,
     0,
@@ -36,7 +36,7 @@ while (true) {
         continue;
     }
     Humedad = pins.map(
-    pins.analogReadPin(AnalogPin.P1),
+    pins.analogReadPin(AnalogPin.P2),
     0,
     500,
     0,
