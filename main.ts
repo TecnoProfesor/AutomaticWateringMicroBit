@@ -1,7 +1,7 @@
 let Humedad = 0
 let NivelAgua = 0
 let Segundos = 1
-let LevelWater = 1
+let LevelWater = 0.5
 let NivelHumedad = 0.5
 pins.digitalWritePin(DigitalPin.P8, 0)
 while (true) {
